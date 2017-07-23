@@ -19,9 +19,12 @@
       "testTsconfig": "tsconfig.spec.json",
       "prefix": "app",
       "styles": [
-        "styles.css"
+        "app-theme.scss",
+        "styles.scss"
       ],
-      "scripts": [],
+      "scripts": [
+         "../node_modules/rosefire/dist/js/rosefire.min.js"
+      ],
       "environmentSource": "environments/environment.ts",
       "environments": {
         "dev": "environments/environment.ts",
@@ -51,7 +54,18 @@
     }
   },
   "defaults": {
-    "styleExt": "css",
-    "component": {}
+    "styleExt": "scss",
+    "component": {
+      "spec": false
+    },
+    "service": {
+      "spec": false
+    },
+    "pipe":{
+      "spec": false
+    },
+    "guard":{
+      "spec": false
+    }
   }
 }
