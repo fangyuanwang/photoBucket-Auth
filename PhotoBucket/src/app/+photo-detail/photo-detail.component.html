@@ -1,3 +1,14 @@
-<p>
-  photo-detail works!
-</p>
+<md-card fxLayout="column" fxLayoutAlign="start stretch">
+  <md-card-header>
+     {{photo.caption}} 
+  </md-card-header>
+  <img md-card-image [src]="photo.imageUrl" alt="Photo"> 
+  <md-card-actions fxLayout="row">
+    <button md-button (click)="back()">	&lt;Back</button>
+    <span fxFlex>&nbsp;</span>
+    <div fxLayoutAlign="end center" *ngIf="photo.uid==authService.currentUserUid">
+      <button md-icon-button (click)="edit()"><md-icon>edit</md-icon></button>
+      <button md-icon-button (click)="remove()"><md-icon>delete</md-icon></button>
+    </div>
+  </md-card-actions>
+</md-card>

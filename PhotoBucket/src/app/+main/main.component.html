@@ -1,10 +1,13 @@
 <md-tab-group>
   <md-tab label="All Photos">
-    Content 1
+    <app-photo-list [isMyPage]="false"></app-photo-list>
   </md-tab>
 
   
   <md-tab label="My Photos">
-    Content 2
+    <app-photo-list [isMyPage]="true"></app-photo-list>
   </md-tab>
 </md-tab-group>
+
+
+<a md-fab (click)="showDialog()"><md-icon>add</md-icon></a>

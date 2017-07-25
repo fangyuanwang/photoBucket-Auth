@@ -11,7 +11,7 @@ export class AuthService {
 
   public isSignedInStream: Observable<boolean>;
   public displayNameStream: Observable<string>;
-    public _currentUserUid: string;
+  public _currentUserUid: string;
   
   constructor(private afAuth: AngularFireAuth,
     private router: Router) {

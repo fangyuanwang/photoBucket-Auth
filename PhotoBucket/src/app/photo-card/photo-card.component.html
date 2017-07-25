@@ -1,3 +1,8 @@
-<p>
-  photo-card works!
-</p>
+<md-card fxLayout="column">
+  <md-card-header fxLayoutAlign="center center">{{photo.caption}}</md-card-header>
+  <img md-card-image [src]="photo.imageUrl" alt="Photo" [routerLink]="['/photo', photo.$key]"> 
+  <md-card-actions *ngIf="isMyPage" fxLayoutAlign="end center">
+    <button md-icon-button (click)="edit()"><md-icon>edit</md-icon></button>
+    <button md-icon-button (click)="remove()"><md-icon>delete</md-icon></button>
+  </md-card-actions>
+</md-card>

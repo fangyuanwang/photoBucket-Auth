@@ -42,6 +42,9 @@ import { AuthService } from "app/services/auth.service";
 import { AuthGuard } from "app/services/auth.guard";
 import { PhotoListComponent } from './photo-list/photo-list.component';
 import { PhotoCardComponent } from './photo-card/photo-card.component';
+import { PhotoService } from "app/services/photo.service";
+import { ReversePipe } from './pipes/reverse.pipe';
+import { PhotoDialogComponent } from './photo-dialog/photo-dialog.component';
 
 export const MaterialModules = [
   MdAutocompleteModule,
@@ -76,7 +79,12 @@ export const MaterialModules = [
     MainComponent,
     PhotoDetailComponent,
     PhotoListComponent,
-    PhotoCardComponent
+    PhotoCardComponent,
+    ReversePipe,
+    PhotoDialogComponent
+  ],
+  entryComponents: [
+    PhotoDialogComponent,
   ],
   imports: [
     BrowserModule,
@@ -92,6 +100,7 @@ export const MaterialModules = [
   providers: [
     AuthService,
     AuthGuard,
+    PhotoService,
   ],
   bootstrap: [AppComponent]
 })
